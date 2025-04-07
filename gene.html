@@ -1,0 +1,28 @@
+---
+layout: default
+title: Gene Information
+---
+
+<div class="gene-info" id="geneInfo">
+    <h1></h1>
+    <p id="geneDetails"></p>
+    <table>
+        <tr>
+            <th>Position</th>
+            <td id="genePosition"></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const info = urlParams.get('info');
+        const position = urlParams.get('position');
+
+        document.querySelector('.gene-info h1').innerText = name;
+        document.getElementById('geneDetails').innerText = info;
+        document.getElementById('genePosition').innerText = position;
+    });
+</script>
